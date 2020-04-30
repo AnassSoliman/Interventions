@@ -10,6 +10,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { ProblemeComponent } from './probleme/probleme.component';
 import { RouterModule } from '@angular/router';
 //import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    RouterModule.forRoot([
-      {path:'accueil', component:AccueilComponent},
-      {path:'probleme', component:ProblemeComponent},
-      {path:'', redirectTo:'accueil', pathMatch:'full'},
-      {path:'**', redirectTo:'accueil', pathMatch:'full'} // Si la route est inexistant rediriger l'utilisateur vers accueil
-    ])
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
