@@ -15,6 +15,9 @@ export class ProblemeComponent implements OnInit {
     this.problemeForm = this.fb.group({
       prenom: ['',[Validators.minLength(3)]]
     })
+    this.problemeForm = this.fb.group({
+      prenom: ['',[Validators.required]]
+    })
   }
 
 }
