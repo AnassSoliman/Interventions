@@ -25,9 +25,21 @@ describe('ProblemeComponent', () => {
   //   expect(component).toBeTruthy();
   // });
 
-  it('Zone prénom invalide avec 2 caractères', () => {
+  it('Zone PRÉNOM invalide avec 2 caractères', () => {
     let zone = component.problemeForm.controls['prenom'];
     zone.setValue('a'.repeat(2));
+    expect(zone.invalid).toBeTruthy();
+  });
+
+  it(' Zone PRÉNOM valide avec 3 caractères', () => {
+    let zone = component.problemeForm.controls['prenom'];
+    zone.setValue('a'.repeat(3));
+    expect(zone.valid).toBeTruthy();
+  });
+
+  it('Zone PRÉNOM invalide avec aucune valeur', () => {
+    let zone = component.problemeForm.controls['prenom'];
+    zone.setValue(null);
     expect(zone.invalid).toBeTruthy();
   });
 });
